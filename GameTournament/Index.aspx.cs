@@ -9,15 +9,15 @@ namespace GameTournament
 		{
 			using (var ctx = new DatabaseContext())
 			{
-				if (ctx.Users.Count() == 0)
+				if (ctx.ApiUsers.Count() == 0)
 				{
 					paragraph.InnerHtml = "There are no users";
 				}
 				else
 				{
-					foreach (var user in ctx.Users)
+					foreach (var user in ctx.ApiUsers)
 					{
-						paragraph.InnerHtml += String.Format("{0} {1} - ", user.Firstname, user.Lastname);
+						paragraph.InnerHtml += String.Format("{0} {1} - ", user.ApiUserId, user.ApiUserId);
 					}
 				}
 			}
